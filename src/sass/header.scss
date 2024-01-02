@@ -1,0 +1,52 @@
+@use 'base.scss' as *;
+
+header {
+    border: none;
+    border-radius: 15px;
+    height: 150px;
+    margin: 20px;
+    background: linear-gradient(to right, #e9d32c, #e9872c);
+    padding: 20px;
+    @include flexbox(column, start, space-evenly);
+
+    & > * {
+        width: 100%;
+        flex: 1;
+    }
+
+    .greeting-container {
+        @include flexbox(row, center, center);
+
+        .greeting {
+            height: fit-content;
+            width: fit-content;
+            @include place('middle');
+            @include flexbox(column, center, center);
+
+            .salam {
+                font-size: 25px;
+            }
+
+            .date {
+                font-size: 13px;
+            }
+
+            scale: 1.5;
+            opacity: 0;
+        }
+    }
+
+    .header-bottom {
+        opacity: 0;
+
+        @include flexbox(row, end, space-evenly);
+
+        & > * {
+            flex: 1;
+        }
+
+        & > p {
+            text-align: end;
+        }
+    }
+}

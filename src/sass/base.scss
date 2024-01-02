@@ -1,0 +1,164 @@
+@mixin reset-margin-padding {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flexbox($flex-direction, $org1, $org2) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $org1;
+    justify-content: $org2;
+}
+
+@mixin grid($gap, $repeat, $direction, $count, $num) {
+    display: grid;
+    gap: $gap;
+
+    @if $repeat {
+        @if $direction == 'column' {
+            grid-template-columns: repeat($count, $num);
+        } 
+        
+        @if $direction == 'row' {
+            grid-template-rows: repeat($count, $num);
+        }
+    }
+}
+
+@mixin square($direction, $num) {
+    aspect-ratio: 1;
+
+    @if $direction == 'width' {
+        width: $num;
+    } @else if $direction == 'height' {
+        height: $num;
+    }
+}
+
+@mixin circle($direction, $num) {
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    @if $direction == 'width' {
+        width: $num;
+    } @else if $direction == 'height' {
+        height: $num;
+    }
+}
+
+
+@mixin place($place) {
+    @if $place == top {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: fit-content;
+    } @else if $place == bottom {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: fit-content;
+    } @else if $place == left {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: fit-content;
+    } @else if $place == right {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: fit-content;
+    } @else if $place == middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        height: fit-content;
+        width: fit-content;
+    }
+}
+
+* {
+    @include reset-margin-padding();
+}
+
+body {
+    background-color: #15151d;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    position: relative;
+}
+
+header {
+    @include place(top);
+    padding: 10px;
+    border-bottom: 2px solid #252534;
+}
+
+[top] {
+    @include place(top);
+}
+
+[bottom] {
+    @include place(bottom);
+}
+
+[left] {
+    @include place(left);
+}
+
+[right] {
+    @include place(right);
+}
+
+[middle] {
+    @include place(middle);
+}
+
+
+footer {
+    @include place(bottom);
+    padding: 10px;
+    border-top: 2px solid #252534;
+}
+
+nav {
+    @include place(top);
+    padding: 10px;
+    @include flexbox(row, center, center)
+}
+
+img {
+    max-width: 100%; 
+    height: auto;
+    vertical-align: middle; 
+    font-style: italic; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    shape-margin: 0.75rem
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes scale-in {
+    from { scale: 0; }
+    to { scale: 1; }
+}
+
+@keyframes scale-out {
+    from { scale: 1; }
+    to { scale: 0; }
+}
