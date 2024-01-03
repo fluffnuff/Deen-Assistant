@@ -1,1 +1,18 @@
 @use 'base.scss' as *;
+
+@keyframes scale-in-2 {
+    from { scale: 1; }
+    to { scale: 1.5; }
+}
+
+@keyframes move-up {
+    to { top: 0; }
+}
+
+@keyframes scale-down {
+    to { scale: 0.5; }
+}
+
+@mixin salam-intro-animation {
+    animation: fade-in 1s ease-in forwards, scale-in-2 500ms ease-out 500ms forwards, move-up 1s 1s forwards, scale-down 1s 1s forwards;
+}
