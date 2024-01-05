@@ -100,23 +100,23 @@ header {
     border-bottom: 2px solid #252534;
 }
 
-[top] {
+.top {
     @include place(top);
 }
 
-[bottom] {
+.bottom {
     @include place(bottom);
 }
 
-[left] {
+.left {
     @include place(left);
 }
 
-[right] {
+.right {
     @include place(right);
 }
 
-[middle] {
+.middle {
     @include place(middle);
 }
 
