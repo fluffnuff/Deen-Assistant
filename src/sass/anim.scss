@@ -1,10 +1,5 @@
 @use 'base.scss' as *;
 
-@keyframes scale-in-2 {
-    from { scale: 1; }
-    to { scale: 1.5; }
-}
-
 @keyframes move-up {
     to { top: 0; }
 }
