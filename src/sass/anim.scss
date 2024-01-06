@@ -1,7 +1,7 @@
 @use 'base.scss' as *;
 
 @keyframes move-up {
-    to { top: 0; }
+    to { top: 15%; }
 }
 
 @keyframes scale-down {
@@ -9,5 +9,5 @@
 }
 
 @mixin salam-intro-animation {
-    animation: fade-in 1s ease-in forwards, scale-in-2 500ms ease-out 500ms forwards, move-up 1s 1s forwards, scale-down 1s 1s forwards;
+    animation: fade-in 1s ease-in forwards, scale-in ease-out 1s forwards, move-up 1s 1s forwards, scale-down 1s 1s forwards;
 }
