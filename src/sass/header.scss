@@ -29,18 +29,11 @@ header {
         // @include salam-intro-animation();
     }
 
+    // .next-prayer {
 
-    .header-bottom {
-        opacity: 0;
+    // }
 
-        @include flexbox(row, end, space-evenly);
+    // .loc {
 
-        & > * {
-            flex: 1;
-        }
-
-        & > p {
-            text-align: end;
-        }
-    }
+    // }
 }
