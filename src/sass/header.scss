@@ -11,6 +11,17 @@ header {
     background: linear-gradient(to right, #e9d32c, #e9872c);
     padding: 20px;
 
+    .header-container {
+        @include place(middle);
+        position: relative;
+        height: 100%;
+        max-width: 250px;
+
+        & > * {
+            opacity: 0;
+        }
+    }
+
     .greeting {
         @include place(middle);
         @include flexbox(column, center, center);
@@ -24,16 +35,33 @@ header {
         }
 
         scale: 0;
-        opacity: 0;
         
         @include salam-intro-animation();
     }
 
-    // .next-prayer {
+    .next-prayer {
+        @include place(middle);
+        @include flexbox(column, center, center);
 
-    // }
+        .prayer-name {
+            font-size: $salam-font-size;
+        }
 
-    // .loc {
+        .prayer-time {
+            font-size: 0.5 * $salam-font-size;
+        }
 
-    // }
+        scale: 1;
+        
+        animation: fade-in 1s ease-in 2s forwards;
+    }
+
+    .loc {
+        @include place(middle-bottom);
+        bottom: 15%;
+        font-size: $salam-font-size;
+        scale: 0.5;
+
+        animation: fade-in 1s ease-in 2s forwards;
+    }
 }
