@@ -11,11 +11,6 @@ header {
     background: linear-gradient(to right, #e9d32c, #e9872c);
     padding: 20px;
 
-    & > * {
-        width: 100%;
-        flex: 1;
-    }
-
     .greeting {
         @include place(middle);
         @include flexbox(column, center, center);
