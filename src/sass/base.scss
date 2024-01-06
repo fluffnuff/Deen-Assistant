@@ -79,6 +79,27 @@
         translate: -50% -50%;
         height: fit-content;
         width: fit-content;
+    } @else if $place == middle-bottom {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        translate: -50% 50%;
+        height: fit-content;
+        width: fit-content;
+    } @else if $place == middle-right {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        translate: 50% -50%;
+        height: fit-content;
+        width: fit-content;
+    } @else if $place == middle-bottom-right {
+        position: absolute;
+        bottom: 50%;
+        right: 50%;
+        translate: 50% 50%;
+        height: fit-content;
+        width: fit-content;
     }
 }
 
